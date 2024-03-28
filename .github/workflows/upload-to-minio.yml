@@ -15,6 +15,7 @@ jobs:
         uses: docker://devatherock/minify-js:3.0.0
         with:
           directory: 'public'      
+          add_suffix: false
       - name: Minio Deploy
         uses: lovellfelix/minio-deploy-action@v1
         with:
