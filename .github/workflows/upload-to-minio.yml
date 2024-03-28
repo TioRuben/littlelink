@@ -11,13 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: minisauras
-        uses: TeamTigers/minisauras@v2.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        id: dir
+      - name: HTML/CSS/JS Minifier
+        uses: docker://devatherock/minify-js:3.0.0
         with:
-          directory: 'public/'
+          directory: 'public'      
+          output: 'public'  
+          add_suffix: false     
       - name: Minio Deploy
         uses: lovellfelix/minio-deploy-action@v1
         with:
