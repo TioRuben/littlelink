@@ -1,9 +1,9 @@
-name: Deploy
+name: Deploy to MinIO
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
